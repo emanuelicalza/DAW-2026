@@ -1,13 +1,22 @@
 import { NavigationBar } from "./components/layout/navigationBar"
 import { Footer } from "./components/layout/footer"
 import { Header } from "./components/layout/header"
+import { categories } from "./data/categories"
 
 function App() {
+    function handleSelectCategory(alias: string) {
+        alert(`Categoria: ${alias}`);
+    }
+
   return (
     <>
       <Header />
 
-      <NavigationBar />
+      <NavigationBar 
+        categories={categories} 
+        activeCategory="todos" 
+        onSelectCategory={handleSelectCategory} 
+        />
 
     <main>
         <section>
@@ -17,7 +26,7 @@ function App() {
             </header>
             <article>
                 <figure>
-                    <img src="./assets/img/burger.png" alt="Burger" />
+                    <img src="./assets/img/burguer.png" alt="Burger" />
                     <figcaption>Lanches</figcaption>
                 </figure>
                 <h3>Burguer</h3>
@@ -28,7 +37,7 @@ function App() {
 
             <article>
                 <figure>
-                    <img src="./assets/img/burger-bacon.png" alt="Burger-bacon" />
+                    <img src="./assets/img/burguer-bacon.png" alt="Burger-bacon" />
                     <figcaption>Lanches</figcaption>
                 </figure>
                 <h3>Bacon Burger</h3>
@@ -39,7 +48,7 @@ function App() {
 
             <article>
                 <figure>
-                    <img src="./assets/img/burger-double.png" alt="Burger-double" />
+                    <img src="./assets/img/burguer-double.png" alt="Burger-double" />
                     <figcaption>Lanches</figcaption>
                 </figure>
                 <h3>Duplo Burguer</h3>
